@@ -1,14 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Script_CharacterController : MonoBehaviour
+public class Script_PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private InputActionReference Movement, Jump, Melody, PickAxe, PickUp;
+    private ScriptInput inputs;
 
+    private void Awake()
+    {
+        inputs = new ScriptInput();
+        inputs.Player.Jump.Enable();
+        inputs.Player.Move.Enable();
+        inputs.Player.Melody.Enable();
+        inputs.Player.PickAxe.Enable();
+        inputs.Player.PickUp.Enable();
+    }
+
+  
     public float MovementSpeed = 3.0f;
     public float JumpStrenght = 5.0f;
     private float CoyoteTime = 0.1f;
@@ -20,13 +29,15 @@ public class Script_CharacterController : MonoBehaviour
     public Animator StellarAnimator;
     private Rigidbody2D StellarRb;
     public Collider2D MelodyRadius;
+    private float MelodyTime = 1f;
+    public bool Melody;
 
     // Start is called before the first frame update
     void Start()
     {
         StellarRb = GetComponent<Rigidbody2D>();
         MelodyRadius.enabled = false;
-        Debug.Log("Melody off");
+        Melody = false;
     }
 
     // Update is called once per frame
@@ -41,7 +52,7 @@ public class Script_CharacterController : MonoBehaviour
             CoyoteTimeCounter -= Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (inputs.Player.Jump.WasPressedThisFrame())
         {
             JumpBufferCounter = JumpBufferTime;
         }
@@ -56,7 +67,7 @@ public class Script_CharacterController : MonoBehaviour
 
             JumpBufferCounter = 0f;
         }
-        if (Input.GetButtonUp("Jump") && StellarRb.velocity.y > 0f)
+        if (inputs.Player.Jump.WasReleasedThisFrame() && StellarRb.velocity.y > 0f)
         {
             StellarRb.velocity = new Vector2(StellarRb.velocity.x, StellarRb.velocity.y * 0.5f);
 
@@ -74,7 +85,7 @@ public class Script_CharacterController : MonoBehaviour
     {
         Move();
     }
-   
+
     private void Flip()
     {
         if (StellarRb.velocity.x > 0.1f)
@@ -92,7 +103,7 @@ public class Script_CharacterController : MonoBehaviour
     }
     private void Move()
     {
-        var horizontalInput = Input.GetAxisRaw("Horizontal");
+        var horizontalInput = inputs.Player.Move.ReadValue<float>();
         StellarRb.velocity = new Vector2(horizontalInput * MovementSpeed, StellarRb.velocity.y);
     }
 
@@ -103,22 +114,37 @@ public class Script_CharacterController : MonoBehaviour
 
     private void UpdateAnimator()
     {
-            StellarAnimator.SetFloat("XAbsoluteSpeed", Mathf.Abs(StellarRb.velocity.x));
+        StellarAnimator.SetFloat("XAbsoluteSpeed", Mathf.Abs(StellarRb.velocity.x));
 
-            StellarAnimator.SetBool("Grounded", IsGrounded());
+        StellarAnimator.SetBool("Grounded", IsGrounded());
 
-            StellarAnimator.SetFloat("YSpeed", StellarRb.velocity.y);
+        StellarAnimator.SetFloat("YSpeed", StellarRb.velocity.y);
     }
 
     void PlayMelody()
     {
-        if(Input.GetButtonDown("Melody"))
+        if (inputs.Player.Melody.WasPressedThisFrame())
         {
             MelodyRadius.enabled = true;
-            Debug.Log("Melody on");
-            new WaitForSeconds(0.5f);
+            MelodyTime = 1f;
+        }
+        if (MelodyTime <= 0f && MelodyTime != float.MinValue)
+        {
             MelodyRadius.enabled = false;
-            Debug.Log("Melody off");
+            MelodyTime = float.MinValue;
+            Melody = false;
+        }
+        else if (MelodyTime > 0f)
+        {
+            MelodyTime -= Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Lifeform"))
+        {
+            Melody = true;
         }
     }
 }
