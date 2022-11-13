@@ -13,8 +13,8 @@ public class Script_PlayerController : MonoBehaviour
         inputs.Player.Jump.Enable();
         inputs.Player.Move.Enable();
         inputs.Player.Melody.Enable();
-        inputs.Player.PickAxe.Enable();
-        inputs.Player.PickUp.Enable();
+        inputs.Player.Laser.Enable();
+        inputs.Player.Pet.Enable();
     }
 
   
@@ -30,14 +30,17 @@ public class Script_PlayerController : MonoBehaviour
     private Rigidbody2D StellarRb;
     public Collider2D MelodyRadius;
     private float MelodyTime = 1f;
-    public bool Melody;
+    public bool playMelody;
+    public bool beingPet;
+    public LavunnyDespuffController scriptLavunny;
 
     // Start is called before the first frame update
     void Start()
     {
         StellarRb = GetComponent<Rigidbody2D>();
         MelodyRadius.enabled = false;
-        Melody = false;
+        playMelody = false;
+        scriptLavunny = GameObject.FindGameObjectWithTag("Lifeform").GetComponent<LavunnyDespuffController>();
     }
 
     // Update is called once per frame
@@ -79,6 +82,8 @@ public class Script_PlayerController : MonoBehaviour
         UpdateAnimator();
 
         PlayMelody();
+
+        Pet();
     }
 
     private void FixedUpdate()
@@ -127,12 +132,13 @@ public class Script_PlayerController : MonoBehaviour
         {
             MelodyRadius.enabled = true;
             MelodyTime = 1f;
+            StellarAnimator.Play("Anim_StellarMelody");
         }
         if (MelodyTime <= 0f && MelodyTime != float.MinValue)
         {
             MelodyRadius.enabled = false;
             MelodyTime = float.MinValue;
-            Melody = false;
+            playMelody = false;
         }
         else if (MelodyTime > 0f)
         {
@@ -144,7 +150,16 @@ public class Script_PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Lifeform"))
         {
-            Melody = true;
+            playMelody = true;
+        }
+    }
+
+    private void Pet()
+    {
+        if (scriptLavunny.canBePet == true && inputs.Player.Pet.WasPressedThisFrame())
+        {
+            beingPet = true;
+            StellarAnimator.Play("Anim_StellarPet");
         }
     }
 }

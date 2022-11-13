@@ -55,7 +55,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""PickAxe"",
+                    ""name"": ""Laser"",
                     ""type"": ""Button"",
                     ""id"": ""7761843b-9ecc-4ea6-ae9a-6379435d1701"",
                     ""expectedControlType"": ""Button"",
@@ -64,7 +64,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""PickUp"",
+                    ""name"": ""Pet"",
                     ""type"": ""Button"",
                     ""id"": ""f058af48-25fa-4f30-b8e0-55a29506bfd9"",
                     ""expectedControlType"": ""Button"",
@@ -202,7 +202,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
-                    ""action"": ""PickAxe"",
+                    ""action"": ""Laser"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -213,7 +213,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""PickAxe"",
+                    ""action"": ""Laser"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -224,7 +224,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
-                    ""action"": ""PickUp"",
+                    ""action"": ""Pet"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -235,7 +235,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""PickUp"",
+                    ""action"": ""Pet"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -277,8 +277,8 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Melody = m_Player.FindAction("Melody", throwIfNotFound: true);
-        m_Player_PickAxe = m_Player.FindAction("PickAxe", throwIfNotFound: true);
-        m_Player_PickUp = m_Player.FindAction("PickUp", throwIfNotFound: true);
+        m_Player_Laser = m_Player.FindAction("Laser", throwIfNotFound: true);
+        m_Player_Pet = m_Player.FindAction("Pet", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -341,8 +341,8 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Move;
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Melody;
-    private readonly InputAction m_Player_PickAxe;
-    private readonly InputAction m_Player_PickUp;
+    private readonly InputAction m_Player_Laser;
+    private readonly InputAction m_Player_Pet;
     public struct PlayerActions
     {
         private @ScriptInput m_Wrapper;
@@ -350,8 +350,8 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Player_Move;
         public InputAction @Jump => m_Wrapper.m_Player_Jump;
         public InputAction @Melody => m_Wrapper.m_Player_Melody;
-        public InputAction @PickAxe => m_Wrapper.m_Player_PickAxe;
-        public InputAction @PickUp => m_Wrapper.m_Player_PickUp;
+        public InputAction @Laser => m_Wrapper.m_Player_Laser;
+        public InputAction @Pet => m_Wrapper.m_Player_Pet;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -370,12 +370,12 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @Melody.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMelody;
                 @Melody.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMelody;
                 @Melody.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMelody;
-                @PickAxe.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickAxe;
-                @PickAxe.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickAxe;
-                @PickAxe.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickAxe;
-                @PickUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickUp;
-                @PickUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickUp;
-                @PickUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPickUp;
+                @Laser.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLaser;
+                @Laser.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLaser;
+                @Laser.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLaser;
+                @Pet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPet;
+                @Pet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPet;
+                @Pet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPet;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -389,12 +389,12 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @Melody.started += instance.OnMelody;
                 @Melody.performed += instance.OnMelody;
                 @Melody.canceled += instance.OnMelody;
-                @PickAxe.started += instance.OnPickAxe;
-                @PickAxe.performed += instance.OnPickAxe;
-                @PickAxe.canceled += instance.OnPickAxe;
-                @PickUp.started += instance.OnPickUp;
-                @PickUp.performed += instance.OnPickUp;
-                @PickUp.canceled += instance.OnPickUp;
+                @Laser.started += instance.OnLaser;
+                @Laser.performed += instance.OnLaser;
+                @Laser.canceled += instance.OnLaser;
+                @Pet.started += instance.OnPet;
+                @Pet.performed += instance.OnPet;
+                @Pet.canceled += instance.OnPet;
             }
         }
     }
@@ -422,7 +422,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
         void OnMelody(InputAction.CallbackContext context);
-        void OnPickAxe(InputAction.CallbackContext context);
-        void OnPickUp(InputAction.CallbackContext context);
+        void OnLaser(InputAction.CallbackContext context);
+        void OnPet(InputAction.CallbackContext context);
     }
 }

@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PickAxe",
+                    "name": "Laser",
                     "type": "Button",
                     "id": "7761843b-9ecc-4ea6-ae9a-6379435d1701",
                     "expectedControlType": "Button",
@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PickUp",
+                    "name": "Pet",
                     "type": "Button",
                     "id": "f058af48-25fa-4f30-b8e0-55a29506bfd9",
                     "expectedControlType": "Button",
@@ -180,7 +180,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "PickAxe",
+                    "action": "Laser",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -191,7 +191,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "PickAxe",
+                    "action": "Laser",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -202,7 +202,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "KeyboardMouse",
-                    "action": "PickUp",
+                    "action": "Pet",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -213,7 +213,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "PickUp",
+                    "action": "Pet",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

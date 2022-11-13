@@ -56,7 +56,7 @@ public class Script_LavunnyController : MonoBehaviour
 
     void RunToMelody()
     {
-        if (scriptPlayer.Melody == true && FacingPlayer == true)
+        if (scriptPlayer.playMelody == true && FacingPlayer == true)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, StellarTransform.position, LavunnySpeed * Time.deltaTime);
         }
