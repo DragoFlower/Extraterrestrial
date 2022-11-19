@@ -1,7 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using System;
+using Unity.VisualScripting;
 
 public class Script_PlayerController : MonoBehaviour
 {
@@ -31,16 +31,13 @@ public class Script_PlayerController : MonoBehaviour
     public Collider2D MelodyRadius;
     private float MelodyTime = 1f;
     public bool playMelody;
-    public bool beingPet;
-    public LavunnyDespuffController scriptLavunny;
+    public List<GameObject> Lavunnys = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
         StellarRb = GetComponent<Rigidbody2D>();
-        MelodyRadius.enabled = false;
         playMelody = false;
-        scriptLavunny = GameObject.FindGameObjectWithTag("Lifeform").GetComponent<LavunnyDespuffController>();
     }
 
     // Update is called once per frame
@@ -84,6 +81,43 @@ public class Script_PlayerController : MonoBehaviour
         PlayMelody();
 
         Pet();
+
+        Lavunny();
+
+        Laser();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(GroundChecker.position, new Vector2(0.3f, 0.1f));
+    }
+
+    private void Lavunny()
+    {
+        // Durchsuche die Liste der Lavunnys im Collider
+        for (int i = Lavunnys.Count - 1; i >= 0; i--)
+        {
+            GameObject lavunny = Lavunnys[i];
+
+            // In welcher Richtung und Entfernung ist der Lavunny
+            float toLavunny = transform.position.x - lavunny.transform.position.x;
+
+            // Ist der Lavunny noch in Melodie-Reichweite?
+            if (toLavunny < 3.5 && toLavunny > -3.5)
+            {
+                // Spielt die Musik, wird der Lavunny angehalten
+                if(playMelody)
+                {
+                    LavunnyDespuffController lavunnyScript = lavunny.GetComponent<LavunnyDespuffController>();
+                    lavunnyScript.Stop();
+                }
+            }
+            else
+            {
+                // Wenn der Lavunny nicht mehr in Melodie-Reichweite ist, wird er aus der Liste gelöscht
+                Lavunnys.Remove(lavunny);
+            }
+        }
     }
 
     private void FixedUpdate()
@@ -112,9 +146,9 @@ public class Script_PlayerController : MonoBehaviour
         StellarRb.velocity = new Vector2(horizontalInput * MovementSpeed, StellarRb.velocity.y);
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
-        return Physics2D.OverlapBox(GroundChecker.position, new Vector2(0.5f, 0.2f), 0f, GroundLayer);
+        return Physics2D.OverlapBox(GroundChecker.position, new Vector2(0.3f, 0.1f), 0f, GroundLayer);
     }
 
     private void UpdateAnimator()
@@ -130,36 +164,64 @@ public class Script_PlayerController : MonoBehaviour
     {
         if (inputs.Player.Melody.WasPressedThisFrame())
         {
-            MelodyRadius.enabled = true;
             MelodyTime = 1f;
             StellarAnimator.Play("Anim_StellarMelody");
+            playMelody = true;
         }
-        if (MelodyTime <= 0f && MelodyTime != float.MinValue)
+        if (MelodyTime <= 0f && playMelody)
         {
-            MelodyRadius.enabled = false;
-            MelodyTime = float.MinValue;
             playMelody = false;
         }
-        else if (MelodyTime > 0f)
+        else if (MelodyTime > 0f && playMelody)
         {
             MelodyTime -= Time.deltaTime;
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag.Equals("Lifeform"))
         {
-            playMelody = true;
+            if(!Lavunnys.Contains(collision.gameObject))
+            {
+                Lavunnys.Add(collision.gameObject);                
+            }
         }
     }
-
     private void Pet()
     {
-        if (scriptLavunny.canBePet == true && inputs.Player.Pet.WasPressedThisFrame())
+        if (inputs.Player.Pet.WasPressedThisFrame())
         {
-            beingPet = true;
-            StellarAnimator.Play("Anim_StellarPet");
+            bool pet = false;
+            for (int i = Lavunnys.Count - 1; i >= 0; i--)
+            {
+                GameObject lavunny = Lavunnys[i];
+
+                float toLavunny = transform.position.x - lavunny.transform.position.x;
+                // Ist der Lavunny in Streichelreichweite (zwischen 0.1 und 0.5) und in der richtigen Richtung, kann gestreichelt werden
+                if (((toLavunny < 0.5 && toLavunny > 0.1) || (toLavunny > -0.5 && toLavunny < -0.1)) && Math.Sign(toLavunny) != Math.Sign(transform.localScale.x))
+                {
+                    LavunnyDespuffController lavunnyScript = lavunny.GetComponent<LavunnyDespuffController>();
+                    lavunnyScript.Pet();
+                    pet = true;
+                }
+            }
+            if(pet)
+            {
+                StellarAnimator.Play("Anim_StellarPet");
+            }
+        }
+    }
+    public bool laser()
+    {
+        return (inputs.Player.Laser.WasPressedThisFrame());
+    }
+
+    void Laser()
+    {
+        if (laser())
+        {
+            StellarAnimator.Play("Anim_StellarLaser");
         }
     }
 }

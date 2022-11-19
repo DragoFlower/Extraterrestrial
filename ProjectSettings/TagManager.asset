@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - Lifeform
+  - PlayerSpawn
+  - SoundController
+  - DeathZone
   layers:
   - Default
   - TransparentFX
@@ -13,7 +16,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - Patrol
+  - 
   - 
   - 
   - 

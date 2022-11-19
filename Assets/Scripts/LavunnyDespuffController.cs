@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class LavunnyDespuffController : MonoBehaviour
 {
@@ -14,27 +10,22 @@ public class LavunnyDespuffController : MonoBehaviour
     public Transform Detector;
     public LayerMask GroundLayer;
     public Collider2D StellarCollider;
-    public Collider2D MelodyRadius;
-    public Script_PlayerController scriptPlayer;
-    public Collider2D PetRadius;
-    public bool canBePet;
+    public bool stop = false;
+    public GameObject egg;
+    public Transform objectSpawner;
 
     private void Start()
     {
+        Detector = transform.GetChild(0).GetComponent<Transform>();
+        objectSpawner = transform.GetChild(1).GetComponent<Transform>();
         isListeningTimer = float.MinValue;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        scriptPlayer = GameObject.Find("Stellar").GetComponent<Script_PlayerController>();
-        PetRadius.enabled = false;
+        StellarCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
-        if (isListeningTimer == float.MinValue)
-        {
-            rb.velocity = new Vector2(speed, 0f);
-        }
-
         Physics2D.IgnoreCollision(GetComponent<Collider2D>(), StellarCollider);
 
         RaycastHit2D GroundDetection = Physics2D.Raycast(Detector.position, Vector2.down, 0.5f, GroundLayer);
@@ -44,9 +35,14 @@ public class LavunnyDespuffController : MonoBehaviour
             Flip();
         }
 
-        MelodyListening();
+        if (stop)
+        {
+            rb.velocity = new Vector2(0f, 0f);
+        } else { 
+            rb.velocity = new Vector2(speed, 0f);
+        }
 
-        Pet();
+        MelodyListening();
     }
     void Flip()
     {
@@ -62,39 +58,37 @@ public class LavunnyDespuffController : MonoBehaviour
 
     void MelodyListening()
     {
-        if (scriptPlayer.playMelody && isListeningTimer == float.MinValue)
+        if (isListeningTimer <= 0f && stop)
         {
-            rb.velocity = new Vector2(0f, 0f);
-            isListeningTimer = 5f;
-            PetRadius.enabled = true;
+            Run();
         }
-        if (isListeningTimer <= 0f && isListeningTimer != float.MinValue)
-        {
-            rb.velocity = new Vector2(speed * transform.localScale.x, 0f);
-            isListeningTimer = float.MinValue;
-            PetRadius.enabled = false;
-            canBePet = false;
-        } 
-        if (isListeningTimer > 0f)
+        if (isListeningTimer > 0f && stop)
         {
             isListeningTimer -= Time.deltaTime;
         }
     }
 
-    private void Pet()
+    public void Pet()
     {
-        if (scriptPlayer.beingPet == true)
-        {
-            PetRadius.enabled = false;
-            scriptPlayer.beingPet = false;
-        }
+        isListeningTimer = 2f;
+        Debug.Log("Pet"+this.name);
+        Instantiate(egg, objectSpawner.position, Quaternion.identity);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public void Stop()
     {
-        if (collision.gameObject.tag.Equals("Player") && scriptPlayer.beingPet != true)
+       if (!stop)
         {
-            canBePet = true;
+            stop = true;
+            isListeningTimer = 5f;
+       }
+   }
+
+    public void Run()
+    {
+        if(stop)
+        {
+            stop = false;
         }
     }
 }
