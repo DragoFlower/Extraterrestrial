@@ -7,12 +7,12 @@ public class Crystals : MonoBehaviour
     public GameObject crystal;
     public Transform objectSpawner;
     public Transform Stellar;
-    public Script_PlayerController scriptPlayer;
+    public PlayerController scriptPlayer;
 
     private void Start()
     {
         objectSpawner = transform.GetChild(0).GetComponent<Transform>();
-        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Script_PlayerController>();
+        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Stellar = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -23,7 +23,7 @@ public class Crystals : MonoBehaviour
 
     void Drop()
     {
-        if (Vector3.Distance(transform.position, Stellar.position) <= 1.0f && scriptPlayer.laser())
+        if (Vector3.Distance(transform.position, Stellar.position) <= 1.0f && scriptPlayer.ShootsLaser())
         {
             Instantiate(crystal, objectSpawner.position, Quaternion.identity);
             Destroy(gameObject);

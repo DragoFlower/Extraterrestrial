@@ -108,9 +108,9 @@ TextureImporter:
       name: Stellar_All_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 300
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -129,9 +129,9 @@ TextureImporter:
       name: Stellar_All_1
       rect:
         serializedVersion: 2
-        x: 27
+        x: 28
         y: 300
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -150,9 +150,9 @@ TextureImporter:
       name: Stellar_All_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 55
         y: 300
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -171,9 +171,9 @@ TextureImporter:
       name: Stellar_All_3
       rect:
         serializedVersion: 2
-        x: 81
+        x: 82
         y: 300
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -192,9 +192,9 @@ TextureImporter:
       name: Stellar_All_4
       rect:
         serializedVersion: 2
-        x: 108
+        x: 109
         y: 300
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -215,7 +215,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 250
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -234,9 +234,9 @@ TextureImporter:
       name: Stellar_All_6
       rect:
         serializedVersion: 2
-        x: 27
+        x: 28
         y: 250
-        width: 27
+        width: 18
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -255,9 +255,9 @@ TextureImporter:
       name: Stellar_All_7
       rect:
         serializedVersion: 2
-        x: 54
+        x: 55
         y: 250
-        width: 27
+        width: 18
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -276,9 +276,9 @@ TextureImporter:
       name: Stellar_All_8
       rect:
         serializedVersion: 2
-        x: 81
+        x: 80
         y: 250
-        width: 27
+        width: 19
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -297,9 +297,9 @@ TextureImporter:
       name: Stellar_All_9
       rect:
         serializedVersion: 2
-        x: 108
+        x: 109
         y: 250
-        width: 27
+        width: 18
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -318,9 +318,9 @@ TextureImporter:
       name: Stellar_All_10
       rect:
         serializedVersion: 2
-        x: 135
+        x: 136
         y: 250
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -339,9 +339,9 @@ TextureImporter:
       name: Stellar_All_11
       rect:
         serializedVersion: 2
-        x: 162
+        x: 163
         y: 250
-        width: 27
+        width: 18
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -360,9 +360,9 @@ TextureImporter:
       name: Stellar_All_12
       rect:
         serializedVersion: 2
-        x: 189
+        x: 190
         y: 250
-        width: 27
+        width: 20
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -381,9 +381,9 @@ TextureImporter:
       name: Stellar_All_13
       rect:
         serializedVersion: 2
-        x: 216
+        x: 217
         y: 250
-        width: 27
+        width: 24
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -402,9 +402,9 @@ TextureImporter:
       name: Stellar_All_14
       rect:
         serializedVersion: 2
-        x: 243
+        x: 244
         y: 250
-        width: 27
+        width: 25
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -423,9 +423,9 @@ TextureImporter:
       name: Stellar_All_15
       rect:
         serializedVersion: 2
-        x: 270
+        x: 271
         y: 250
-        width: 27
+        width: 20
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -444,9 +444,9 @@ TextureImporter:
       name: Stellar_All_16
       rect:
         serializedVersion: 2
-        x: 297
+        x: 298
         y: 250
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -465,9 +465,9 @@ TextureImporter:
       name: Stellar_All_17
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 200
-        width: 27
+        width: 20
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -486,9 +486,9 @@ TextureImporter:
       name: Stellar_All_18
       rect:
         serializedVersion: 2
-        x: 27
+        x: 28
         y: 200
-        width: 27
+        width: 20
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -507,9 +507,9 @@ TextureImporter:
       name: Stellar_All_19
       rect:
         serializedVersion: 2
-        x: 54
+        x: 55
         y: 200
-        width: 27
+        width: 20
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -528,9 +528,9 @@ TextureImporter:
       name: Stellar_All_20
       rect:
         serializedVersion: 2
-        x: 81
+        x: 82
         y: 200
-        width: 27
+        width: 20
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -549,9 +549,9 @@ TextureImporter:
       name: Stellar_All_21
       rect:
         serializedVersion: 2
-        x: 108
+        x: 109
         y: 200
-        width: 27
+        width: 20
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -570,9 +570,9 @@ TextureImporter:
       name: Stellar_All_22
       rect:
         serializedVersion: 2
-        x: 135
+        x: 136
         y: 200
-        width: 27
+        width: 20
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -1242,9 +1242,9 @@ TextureImporter:
       name: Stellar_All_54
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 27
+        width: 17
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -1263,9 +1263,9 @@ TextureImporter:
       name: Stellar_All_55
       rect:
         serializedVersion: 2
-        x: 27
+        x: 28
         y: 0
-        width: 27
+        width: 16
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -1286,7 +1286,7 @@ TextureImporter:
         serializedVersion: 2
         x: 54
         y: 0
-        width: 27
+        width: 18
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -1307,7 +1307,7 @@ TextureImporter:
         serializedVersion: 2
         x: 81
         y: 0
-        width: 27
+        width: 18
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -1328,7 +1328,7 @@ TextureImporter:
         serializedVersion: 2
         x: 108
         y: 0
-        width: 27
+        width: 18
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -1349,7 +1349,7 @@ TextureImporter:
         serializedVersion: 2
         x: 135
         y: 0
-        width: 27
+        width: 18
         height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -1400,12 +1400,12 @@ TextureImporter:
       Stellar_All_2: 1333976897
       Stellar_All_34: 1180951581
       Stellar_All_1: -1209178656
-      Stellar_All_31: 474790647
-      Stellar_All_28: -1918839451
-      Stellar_All_43: 50149334
       Stellar_All_55: 1320558420
+      Stellar_All_43: 50149334
+      Stellar_All_31: 474790647
       Stellar_All_24: 1026489466
       Stellar_All_36: 849601170
+      Stellar_All_28: -1918839451
       Stellar_All_15: 531883103
       Stellar_All_14: 151920621
       Stellar_All_42: 425616790

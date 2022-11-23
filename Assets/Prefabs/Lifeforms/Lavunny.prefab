@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 452990604767115808}
   - component: {fileID: 452990604767115815}
   - component: {fileID: 452990604767115814}
-  - component: {fileID: 5413284115344272816}
+  - component: {fileID: 5858434582689059559}
+  - component: {fileID: 8754298989880886200}
   m_Layer: 0
   m_Name: Lavunny
   m_TagString: Lifeform
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 192157625
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1835225473, guid: 31da49ea1c5931347b4451e9d9503577, type: 3}
+  m_Sprite: {fileID: -1130240005, guid: 31da49ea1c5931347b4451e9d9503577, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +104,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.061644554, y: 0.35155737}
+  m_Offset: {x: 0, y: 0.34}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -114,7 +115,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.43717384, y: 0.6708071}
+  m_Size: {x: 0.5, y: 0.65}
   m_EdgeRadius: 0
 --- !u!50 &452990604767115815
 Rigidbody2D:
@@ -157,7 +158,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5413284115344272816
+--- !u!58 &5858434582689059559
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 452990604560265611}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  serializedVersion: 2
+  m_Radius: 3
+--- !u!114 &8754298989880886200
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,17 +183,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 452990604560265611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c355523167f33b3448d7bc1d7a42c25e, type: 3}
+  m_Script: {fileID: 11500000, guid: 50153b6095de76448ad7e19511a7e860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Detector: {fileID: 0}
+  scriptPlayer: {fileID: 0}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
-  StellarCollider: {fileID: 0}
-  stop: 0
   egg: {fileID: 4966960674775492039, guid: 711df61f70073734688b976a831f9155, type: 3}
-  objectSpawner: {fileID: 0}
+  Stellar: {fileID: 0}
+  stop: 0
 --- !u!1 &452990604793917038
 GameObject:
   m_ObjectHideFlags: 0

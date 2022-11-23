@@ -117,8 +117,7 @@ GameObject:
   - component: {fileID: 4794678914684244566}
   - component: {fileID: 4794678914684244567}
   - component: {fileID: 4794678914684244564}
-  - component: {fileID: 4794678914684244575}
-  - component: {fileID: 8886214985508926260}
+  - component: {fileID: 463870380282408357}
   m_Layer: 0
   m_Name: Stellar
   m_TagString: Player
@@ -227,7 +226,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.18, y: 1.007773}
+  m_Offset: {x: 0, y: 1.007773}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -238,25 +237,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.422884, y: 1.9926474}
+  m_Size: {x: 0.7, y: 1.9926474}
   m_EdgeRadius: 0
---- !u!58 &4794678914684244575
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4794678914684244565}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1}
-  serializedVersion: 2
-  m_Radius: 3
---- !u!114 &8886214985508926260
+--- !u!114 &463870380282408357
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -265,19 +248,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4794678914684244565}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74ffde6b1ff208640ba36d1a65ff7aa7, type: 3}
+  m_Script: {fileID: 11500000, guid: d7ef53ddae9f15e409cc587e45f0fac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MovementSpeed: 3
-  JumpStrenght: 7
-  GroundChecker: {fileID: 4794678914877699000}
+  scriptLavunny: {fileID: 0}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
-  StellarAnimator: {fileID: 4794678913448011819}
-  MelodyRadius: {fileID: 4794678914684244575}
-  playMelody: 0
-  Lavunnys: []
+  speed: 3
+  jumpStrenght: 7
 --- !u!1 &4794678914877699001
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4794678914877699001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.143, y: 0.004, z: 0}
+  m_LocalPosition: {x: 0.017, y: 0.004, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

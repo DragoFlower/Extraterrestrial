@@ -71,6 +71,15 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""521ed9e5-abe8-4381-9e5e-61912ddf6ac7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -238,6 +247,39 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""action"": ""Pet"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""389b9cfc-6ec0-41b1-9faa-238c2a109b13"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""585bc260-9b21-4831-a3db-7ea4592b8248"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d614a6db-4163-4fbc-82d1-1e33549c7364"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -279,6 +321,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         m_Player_Melody = m_Player.FindAction("Melody", throwIfNotFound: true);
         m_Player_Laser = m_Player.FindAction("Laser", throwIfNotFound: true);
         m_Player_Pet = m_Player.FindAction("Pet", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -343,6 +386,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Melody;
     private readonly InputAction m_Player_Laser;
     private readonly InputAction m_Player_Pet;
+    private readonly InputAction m_Player_Pause;
     public struct PlayerActions
     {
         private @ScriptInput m_Wrapper;
@@ -352,6 +396,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         public InputAction @Melody => m_Wrapper.m_Player_Melody;
         public InputAction @Laser => m_Wrapper.m_Player_Laser;
         public InputAction @Pet => m_Wrapper.m_Player_Pet;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -376,6 +421,9 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @Pet.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPet;
                 @Pet.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPet;
                 @Pet.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPet;
+                @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -395,6 +443,9 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @Pet.started += instance.OnPet;
                 @Pet.performed += instance.OnPet;
                 @Pet.canceled += instance.OnPet;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -424,5 +475,6 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         void OnMelody(InputAction.CallbackContext context);
         void OnLaser(InputAction.CallbackContext context);
         void OnPet(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
