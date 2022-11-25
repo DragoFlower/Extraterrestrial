@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4794678913448011829}
   - component: {fileID: 4794678913448011818}
   - component: {fileID: 4794678913448011819}
+  - component: {fileID: 4876155137857945328}
+  - component: {fileID: 7569509006420419622}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -105,6 +107,37 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4876155137857945328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794678913448011816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
+--- !u!114 &7569509006420419622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794678913448011816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2fe5546f775c47d2820aa5e8a715f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"nest":{"source":"Macro","macro":0,"embed":null}}'
+    _objectReferences:
+    - {fileID: 11400000, guid: a2cbe816504b15a468b8f4acfd06fcb7, type: 2}
 --- !u!1 &4794678914684244565
 GameObject:
   m_ObjectHideFlags: 0
@@ -118,6 +151,7 @@ GameObject:
   - component: {fileID: 4794678914684244567}
   - component: {fileID: 4794678914684244564}
   - component: {fileID: 463870380282408357}
+  - component: {fileID: 6533964847944175485}
   m_Layer: 0
   m_Name: Stellar
   m_TagString: Player
@@ -251,12 +285,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ef53ddae9f15e409cc587e45f0fac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scriptLavunny: {fileID: 0}
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
+  GameController: {fileID: 0}
   speed: 3
   jumpStrenght: 7
+  canMove: 0
+--- !u!114 &6533964847944175485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4794678914684244565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data:
+    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
+    _objectReferences: []
 --- !u!1 &4794678914877699001
 GameObject:
   m_ObjectHideFlags: 0

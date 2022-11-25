@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerController : MonoBehaviour
@@ -13,11 +15,12 @@ public class PlayerController : MonoBehaviour
     private float airTime;
     private float jumpBufferTime = 0.1f;
     private float jumpBufferCounter;
-    private float melodyTime = 1f;
 
     public LayerMask GroundLayer;
+    public GameObject GameController;
     public float speed = 3.0f;
     public float jumpStrenght = 5.0f;
+    public bool canMove;
 
 
     private void Awake()
@@ -36,7 +39,8 @@ public class PlayerController : MonoBehaviour
     }
     void Start()
     {
-
+        GameController = GameObject.FindGameObjectWithTag("GameController");
+        canMove = true;
     }
     void Update()
     {
@@ -61,6 +65,7 @@ public class PlayerController : MonoBehaviour
         UpdateAnimator();
         Melody();
         Laser();
+        Pause();
     }
 
     private void FixedUpdate()
@@ -86,8 +91,11 @@ public class PlayerController : MonoBehaviour
     }
     private void Move()
     {
-        var horizontalInput = inputs.Player.Move.ReadValue<float>();
-        StellarRb.velocity = new Vector2(horizontalInput * speed, StellarRb.velocity.y);
+        if (canMove)
+        {
+            var horizontalInput = inputs.Player.Move.ReadValue<float>();
+            StellarRb.velocity = new Vector2(horizontalInput * speed, StellarRb.velocity.y);
+        }
     }
     public bool IsGrounded()
     {
@@ -95,7 +103,7 @@ public class PlayerController : MonoBehaviour
     }
     void Jump()
     {
-        if (airTime < coyoteTime && jumpBufferCounter > 0f)
+        if (airTime < coyoteTime && jumpBufferCounter > 0f && canMove)
         {
             StellarRb.velocity = new Vector2(StellarRb.velocity.x, jumpStrenght);
 
@@ -121,7 +129,7 @@ public class PlayerController : MonoBehaviour
 
     void Laser()
     {
-        if (ShootsLaser())
+        if (ShootsLaser() && canMove && StellarRb.velocity == new Vector2(0f, 0f))
         {
             StellarAnimator.Play("Anim_StellarLaser");
         }
@@ -132,7 +140,7 @@ public class PlayerController : MonoBehaviour
     }
     void Melody()
     {
-        if (PlaysMelody())
+        if (PlaysMelody() && canMove && StellarRb.velocity == new Vector2(0f, 0f))
         {
             StellarAnimator.Play("Anim_StellarMelody");
         }
@@ -143,6 +151,23 @@ public class PlayerController : MonoBehaviour
     }
     public void Pet()
     {
+        if (canMove && StellarRb.velocity == new Vector2(0f, 0f))
         StellarAnimator.Play("Anim_StellarPet");
+    }
+    void Pause()
+    {
+        if (inputs.Player.Pause.WasPressedThisFrame())
+        {
+            CustomEvent.Trigger(GameController, "Pause");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("DeathZone"))
+        {
+            CustomEvent.Trigger(GameController, "ToDeath");
+            Destroy(gameObject);
+        }
     }
 }

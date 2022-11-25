@@ -105,7 +105,217 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lavunny 1_0
+      name: Lavunny_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 54
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880439997be3ec44795b212fbf4677a3
+      internalID: -1297218289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 54
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80e4007ecec4fa4385b5c5dce2ca048
+      internalID: -1693801863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 54
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3613552624038bc449138a7e9bcc1100
+      internalID: 2118990376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 54
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f3ffce2a956b441adbd3d26bddb3b5
+      internalID: 395546669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 27
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 543afef743135354f895fe81387ac83d
+      internalID: -1859657435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 27
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a701877c2737f47b07fc3e58244bdb
+      internalID: -145624614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 27
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6fda4e46089be4f866919d3374cab8
+      internalID: -1228321350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 27
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c71bacb67b33c94f9cb0d63b7033b78
+      internalID: 421520155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 27
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3e60dba029f1940937e46a152b7f29
+      internalID: 1872240728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 27
+        width: 21
+        height: 27
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2615cf7eb0ff8e4a850137c9831792d
+      internalID: 703836164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lavunny_Walk_10
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +329,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ed7a8f6e255d4342b0c075daa7275ad
-      internalID: -1130240005
+      spriteID: 6b7f520193adb404a855c5cfc3215974
+      internalID: -1108437087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lavunny 1_1
+      name: Lavunny_Walk_11
       rect:
         serializedVersion: 2
         x: 21
@@ -140,14 +350,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f614c41a3acc9d8418d37b583e75e696
-      internalID: 231642222
+      spriteID: cd64a6b05d318c64fba473014df0ec24
+      internalID: 1760725254
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lavunny 1_2
+      name: Lavunny_Walk_12
       rect:
         serializedVersion: 2
         x: 42
@@ -161,14 +371,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1af5ce1351c0204ebc1bb882d3d463f
-      internalID: -1014983192
+      spriteID: 28079a3e2c1c1a142920554e71f899ba
+      internalID: -283087883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lavunny 1_3
+      name: Lavunny_Walk_13
       rect:
         serializedVersion: 2
         x: 63
@@ -182,14 +392,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee5a2d74d5c344848acca148ed3e2210
-      internalID: -1638230043
+      spriteID: 26e9d2e16aa057f49a03730d634ed3ab
+      internalID: 1563924727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lavunny 1_4
+      name: Lavunny_Walk_14
       rect:
         serializedVersion: 2
         x: 84
@@ -203,14 +413,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ebd7762986880b843beea577de802bac
-      internalID: -379384468
+      spriteID: 454e94bba14081e4fa132ce8a7081dec
+      internalID: 2109596847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lavunny 1_5
+      name: Lavunny_Walk_15
       rect:
         serializedVersion: 2
         x: 105
@@ -224,8 +434,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89a1c8f4f13d594429beca3a4582c2f8
-      internalID: 1835225473
+      spriteID: 560feda08cd266c4d90d249379d25c3e
+      internalID: 1890053951
       vertices: []
       indices: 
       edges: []
@@ -241,12 +451,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lavunny 1_3: -1638230043
-      Lavunny 1_2: -1014983192
-      Lavunny 1_5: 1835225473
-      Lavunny 1_1: 231642222
-      Lavunny 1_4: -379384468
-      Lavunny 1_0: -1130240005
+      Lavunny_Walk_10: -1108437087
+      Lavunny_Walk_9: 703836164
+      Lavunny_Walk_12: -283087883
+      Lavunny_Walk_2: 2118990376
+      Lavunny_Walk_6: -1228321350
+      Lavunny_Walk_0: -1297218289
+      Lavunny_Walk_4: -1859657435
+      Lavunny_Walk_11: 1760725254
+      Lavunny_Walk_3: 395546669
+      Lavunny_Walk_5: -145624614
+      Lavunny_Walk_14: 2109596847
+      Lavunny_Walk_8: 1872240728
+      Lavunny_Walk_7: 421520155
+      Lavunny_Walk_13: 1563924727
+      Lavunny_Walk_15: 1890053951
+      Lavunny_Walk_1: -1693801863
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
