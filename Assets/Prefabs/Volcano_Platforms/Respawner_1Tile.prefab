@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 874093387637943604}
   - component: {fileID: 874093387637943563}
   m_Layer: 3
-  m_Name: Volcano_BreakingPlatform_1Tile
+  m_Name: Respawner_1Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

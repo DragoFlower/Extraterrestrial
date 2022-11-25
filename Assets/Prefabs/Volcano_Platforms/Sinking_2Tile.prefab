@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659522571377762951}
   m_Layer: 3
-  m_Name: Volcano_SinkingPlatform_2Tile
+  m_Name: Sinking_2Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
