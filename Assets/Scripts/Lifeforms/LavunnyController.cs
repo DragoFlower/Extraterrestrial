@@ -50,7 +50,7 @@ public class LavunnyController : MonoBehaviour
         }
         else
         {
-            rb.velocity = new Vector2(speed, 0f);
+            rb.velocity = new Vector2(speed * transform.localScale.x, 0f);
         }
 
         MelodyListening();
@@ -66,7 +66,6 @@ public class LavunnyController : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
-        speed *= -1f;
     }
     private bool HittingWall()
     {
@@ -75,10 +74,12 @@ public class LavunnyController : MonoBehaviour
 
     private void Stop()
     {
-        if (Vector3.Distance(transform.position, Stellar.position) <= 3.0f && scriptPlayer.PlaysMelody())
+        if (Vector3.Distance(transform.position, Stellar.position) <= 3.0f && scriptPlayer.playsMelody)
         {
             stop = true;
             isListeningTimer = 5f;
+            if (!FacingPlayer())
+                Flip();
         }
     }
     void MelodyListening()
@@ -95,7 +96,7 @@ public class LavunnyController : MonoBehaviour
 
     public void Pet()
     {
-        if (scriptPlayer.DoesPet() && FacingPlayer() && stop && Vector3.Distance(transform.position, Stellar.position) <= 1.0f)
+        if (scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= 1.0f)
         {
             scriptPlayer.Pet();
             animator.Play("Anim_LavunnyPet");
@@ -114,9 +115,14 @@ public class LavunnyController : MonoBehaviour
     private bool FacingPlayer()
     {
         return ((transform.position.x > Stellar.transform.position.x && transform.localScale.x < Stellar.transform.localScale.x) ||
-            (transform.position.x > Stellar.transform.position.x && transform.localScale.x == Stellar.transform.localScale.x) ||
+            (transform.position.x > Stellar.transform.position.x && transform.localScale.x == -1f && Stellar.transform.localScale.x == -1f) ||
             (transform.position.x < Stellar.transform.position.x && transform.localScale.x > Stellar.transform.localScale.x) ||
-            (transform.position.x < Stellar.transform.position.x && transform.localScale.x == Stellar.transform.localScale.x));
+            (transform.position.x < Stellar.transform.position.x && transform.localScale.x == 1f && Stellar.transform.localScale.x == 1f));
+    }
+
+    private bool BothFacing()
+    {
+        return ((transform.position.x > Stellar.transform.position.x && transform.localScale.x < Stellar.transform.localScale.x) || (transform.position.x < Stellar.transform.position.x && transform.localScale.x > Stellar.transform.localScale.x));
     }
 
     void UpdateAnimator()

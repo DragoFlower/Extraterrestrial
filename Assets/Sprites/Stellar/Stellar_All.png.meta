@@ -1134,111 +1134,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stellar_All_49
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 50
-        width: 27
-        height: 50
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e208cbd1aaa955041aa83c4cb42c069d
-      internalID: 1456805954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stellar_All_50
-      rect:
-        serializedVersion: 2
-        x: 243
-        y: 50
-        width: 27
-        height: 50
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfe8ec1cd725dd745b4546b399f19063
-      internalID: 655662513
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stellar_All_51
-      rect:
-        serializedVersion: 2
-        x: 270
-        y: 50
-        width: 27
-        height: 50
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c48a45221c77312469771d1340df46a5
-      internalID: -281392089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stellar_All_52
-      rect:
-        serializedVersion: 2
-        x: 297
-        y: 50
-        width: 27
-        height: 50
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e09b36b2f2c88f7419f7289f39519492
-      internalID: -839263913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Stellar_All_53
-      rect:
-        serializedVersion: 2
-        x: 324
-        y: 50
-        width: 27
-        height: 50
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa39aa450a8f52b47832ed2caec2e153
-      internalID: -1837526637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Stellar_All_54
       rect:
         serializedVersion: 2
@@ -1400,12 +1295,12 @@ TextureImporter:
       Stellar_All_2: 1333976897
       Stellar_All_34: 1180951581
       Stellar_All_1: -1209178656
-      Stellar_All_55: 1320558420
-      Stellar_All_43: 50149334
       Stellar_All_31: 474790647
+      Stellar_All_28: -1918839451
+      Stellar_All_43: 50149334
+      Stellar_All_55: 1320558420
       Stellar_All_24: 1026489466
       Stellar_All_36: 849601170
-      Stellar_All_28: -1918839451
       Stellar_All_15: 531883103
       Stellar_All_14: 151920621
       Stellar_All_42: 425616790

@@ -66,6 +66,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1312294749, guid: 41e1a1449123b6a4baaae550fafb19e2, type: 3}
+    - target: {fileID: 7547586700559767483, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 7713084842100834175, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 3.0f;
     public float jumpStrenght = 5.0f;
     public bool canMove;
+    public bool playsMelody;
+    public bool shootsLaser;
 
 
     private void Awake()
@@ -122,25 +124,17 @@ public class PlayerController : MonoBehaviour
 
         StellarAnimator.SetFloat("YSpeed", StellarRb.velocity.y);
     }
-    public bool ShootsLaser()
-    {
-        return inputs.Player.Laser.WasPressedThisFrame();
-    }
 
     void Laser()
     {
-        if (ShootsLaser() && canMove && StellarRb.velocity == new Vector2(0f, 0f))
+        if (inputs.Player.Laser.WasPressedThisFrame() && canMove && StellarRb.velocity == new Vector2(0f, 0f))
         {
             StellarAnimator.Play("Anim_StellarLaser");
         }
     }
-    public bool PlaysMelody()
-    {
-        return inputs.Player.Melody.WasPressedThisFrame();
-    }
     void Melody()
     {
-        if (PlaysMelody() && canMove && StellarRb.velocity == new Vector2(0f, 0f))
+        if (inputs.Player.Melody.WasPressedThisFrame() && canMove && StellarRb.velocity == new Vector2(0f, 0f))
         {
             StellarAnimator.Play("Anim_StellarMelody");
         }
@@ -168,6 +162,10 @@ public class PlayerController : MonoBehaviour
         {
             CustomEvent.Trigger(GameController, "ToDeath");
             Destroy(gameObject);
+        }
+        if (collision.gameObject.tag.Equals("LavaDeath"))
+        {
+            StellarAnimator.Play("Anim_StellarLavaDeath");
         }
     }
 }

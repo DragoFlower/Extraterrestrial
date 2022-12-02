@@ -23,7 +23,7 @@ public class Crystal : MonoBehaviour
 
     void Drop()
     {
-        if (Vector3.Distance(transform.position, Stellar.position) <= 1.0f && scriptPlayer.ShootsLaser())
+        if (Vector3.Distance(transform.position, Stellar.position) <= 1.0f && scriptPlayer.shootsLaser)
         {
             Instantiate(crystal, objectSpawner.position, Quaternion.identity);
             Destroy(gameObject);

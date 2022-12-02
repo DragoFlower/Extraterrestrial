@@ -28,6 +28,6 @@ public class PlatformRespawn : MonoBehaviour
         }
 
         if (platform != null)
-            respawnTime = 1f;
+            respawnTime = 2f;
     }
 }

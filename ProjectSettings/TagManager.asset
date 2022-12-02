@@ -7,8 +7,10 @@ TagManager:
   - Ground
   - Lifeform
   - PlayerSpawn
-  - SoundController
   - DeathZone
+  - SoundManager
+  - SoundController
+  - LavaDeath
   layers:
   - Default
   - TransparentFX

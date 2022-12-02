@@ -35,16 +35,6 @@ AnimationClip:
       value: {fileID: -893307242, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
     - time: 0.7
       value: {fileID: -1944735617, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - time: 0.8
-      value: {fileID: 1456805954, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - time: 0.9
-      value: {fileID: 655662513, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - time: 1
-      value: {fileID: -281392089, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - time: 1.1
-      value: {fileID: -839263913, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - time: 1.2
-      value: {fileID: -1837526637, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -72,17 +62,12 @@ AnimationClip:
     - {fileID: -2008632190, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
     - {fileID: -893307242, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
     - {fileID: -1944735617, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - {fileID: 1456805954, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - {fileID: 655662513, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - {fileID: -281392089, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - {fileID: -839263913, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
-    - {fileID: -1837526637, guid: 08cb7abe029cc584593cb9829d6d8368, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.3000001
+    m_StopTime: 0.8
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -109,7 +94,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.2
+  - time: 0.4
+    functionName: TriggerAnimationEvent
+    data: Laser
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.7
     functionName: TriggerAnimationEvent
     data: Move
     objectReferenceParameter: {fileID: 0}
