@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
     {
         return Physics2D.OverlapBox(GroundChecker.position, new Vector2(0.3f, 0.1f), 0f, GroundLayer);
     }
-    void Jump()
+        void Jump()
     {
         if (airTime < coyoteTime && jumpBufferCounter > 0f && canMove)
         {

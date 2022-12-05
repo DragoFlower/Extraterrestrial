@@ -58,10 +58,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 414474773, guid: 41e1a1449123b6a4baaae550fafb19e2, type: 3}
+    - target: {fileID: 355917901819087203, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 355917902293669041, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 355917902293669047, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 522456417, guid: 41e1a1449123b6a4baaae550fafb19e2, type: 3}
+    - target: {fileID: 355917903091116004, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 355917903091116026, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -117,6 +129,10 @@ PrefabInstance:
     - target: {fileID: 8461472290479240181, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
       propertyPath: m_Name
       value: Platform_3Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8461472290479240181, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}

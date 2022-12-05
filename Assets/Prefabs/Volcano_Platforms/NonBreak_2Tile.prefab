@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237547115758622767}
   - component: {fileID: 237547115758622764}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tiles_Spaceship_complete_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 237547116345962558}
   - component: {fileID: 237547116345962559}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tiles_Spaceship_complete_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}

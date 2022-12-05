@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355917901819087202}
   - component: {fileID: 355917901819087201}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tiles_Spaceship_complete_23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355917902293669040}
   - component: {fileID: 355917902293669047}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tiles_Spaceship_complete_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 355917903091116027}
   - component: {fileID: 355917903091116026}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tiles_Spaceship_complete_21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
