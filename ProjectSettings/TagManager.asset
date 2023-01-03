@@ -20,7 +20,7 @@ TagManager:
   - UI
   - Background
   - SinkingPlatform
-  - 
+  - Slope
   - 
   - 
   - 
@@ -45,6 +45,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Cave_Background
+    uniqueID: 1768628233
+    locked: 0
   - name: Background
     uniqueID: 3842457729
     locked: 0
