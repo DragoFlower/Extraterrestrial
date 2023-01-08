@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
     }
     public bool IsGrounded()
     {
-        return Physics2D.OverlapBox(GroundChecker.position, new Vector2(0.3f, 0.1f), 0f, GroundLayer);
+        return Physics2D.Raycast(GroundChecker.position, Vector2.down, 0.1f, GroundLayer);
     }
         void Jump()
     {
