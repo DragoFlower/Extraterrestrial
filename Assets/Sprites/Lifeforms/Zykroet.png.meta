@@ -109,11 +109,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 66
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        y: 44
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -129,12 +129,12 @@ TextureImporter:
       name: Zykroet_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 66
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        x: 20
+        y: 44
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: Zykroet_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 66
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        x: 40
+        y: 44
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: Zykroet_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 66
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        x: 60
+        y: 44
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -192,12 +192,12 @@ TextureImporter:
       name: Zykroet_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 33
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        x: 80
+        y: 44
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -213,12 +213,12 @@ TextureImporter:
       name: Zykroet_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 33
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        x: 100
+        y: 44
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -235,11 +235,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        y: 22
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: Zykroet_7
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        x: 20
+        y: 22
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -276,12 +276,12 @@ TextureImporter:
       name: Zykroet_8
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        x: 40
+        y: 22
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -297,12 +297,12 @@ TextureImporter:
       name: Zykroet_9
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        x: 60
+        y: 22
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -318,12 +318,12 @@ TextureImporter:
       name: Zykroet_10
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 0
-        width: 32
-        height: 33
-      alignment: 9
-      pivot: {x: 0.525, y: 0.5}
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -331,6 +331,111 @@ TextureImporter:
       bones: []
       spriteID: debdea9f41a463342aa34e4c26fb05b7
       internalID: 1723610109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zykroet_11
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24fd402df43953142acce9002b665d55
+      internalID: -149199963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zykroet_12
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 0
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44ef8898bf25ad44c86228478aa6e73b
+      internalID: -389955541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zykroet_13
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68629c1b04c6e7747b1b0d60cc704fdd
+      internalID: -806979647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zykroet_14
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2399e48b92a8594687fbf3d855ae5b5
+      internalID: -706128005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zykroet_15
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb140250356bd747bfd118974874704
+      internalID: 1778029547
       vertices: []
       indices: 
       edges: []
@@ -350,10 +455,15 @@ TextureImporter:
       Zykroet_10: 1723610109
       Zykroet_7: -678594874
       Zykroet_9: 1609282272
+      Zykroet_12: -389955541
+      Zykroet_15: 1778029547
       Zykroet_1: -1320427391
       Zykroet_2: 872789581
       Zykroet_6: -1327399477
       Zykroet_0: 790076063
+      Zykroet_14: -706128005
+      Zykroet_11: -149199963
+      Zykroet_13: -806979647
       Zykroet_4: -1879307422
       Zykroet_3: 1728180524
       Zykroet_5: -362756980
