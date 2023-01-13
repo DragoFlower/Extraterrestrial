@@ -96,7 +96,7 @@ public class ZykroetController : MonoBehaviour
 
     public void Pet()
     {
-        if (scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= 1.0f)
+        if (scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= 2.0f)
         {
             scriptPlayer.Pet();
             animator.Play("Anim_ZykroetPet");

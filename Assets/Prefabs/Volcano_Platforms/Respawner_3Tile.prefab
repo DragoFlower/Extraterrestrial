@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: {fileID: 0}
-  platformPrefab: {fileID: 8461472290479240181, guid: 20a2e57398d6b7445a030347510e0eb4, type: 3}
+  platformPrefab: {fileID: 8461472290479240181, guid: 27a51fba31039e747b4c000050d28576, type: 3}
 --- !u!1001 &89347236206649798
 PrefabInstance:
   m_ObjectHideFlags: 0

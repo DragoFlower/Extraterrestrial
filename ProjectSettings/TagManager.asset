@@ -45,11 +45,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3842457729
+    locked: 0
   - name: Cave_Background
     uniqueID: 1768628233
     locked: 0
-  - name: Background
-    uniqueID: 3842457729
+  - name: BehindDefault
+    uniqueID: 2166442369
     locked: 0
   - name: Enemies
     uniqueID: 192157625

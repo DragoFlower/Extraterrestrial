@@ -74,7 +74,7 @@ public class DespuffController : MonoBehaviour
 
     private void Stop()
     {
-        if (Vector3.Distance(transform.position, Stellar.position) <= 3.0f && scriptPlayer.playsMelody)
+        if (Vector3.Distance(transform.position, Stellar.position) <= 4.0f && scriptPlayer.playsMelody)
         {
             stop = true;
             isListeningTimer = 5f;
@@ -96,7 +96,7 @@ public class DespuffController : MonoBehaviour
 
     public void Pet()
     {
-        if (scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= 1.0f)
+        if (scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= 1.5f)
         {
             scriptPlayer.Pet();
             animator.Play("Anim_DespuffPet");
