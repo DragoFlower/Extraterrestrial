@@ -23,7 +23,7 @@ public class Bush : MonoBehaviour
 
     void Drop()
     {
-        if (Vector3.Distance(transform.position, Stellar.position) <= 1.0f && scriptPlayer.shootsLaser)
+        if (Vector3.Distance(transform.position, Stellar.position) <= 2.5f && scriptPlayer.shootsLaser)
         {
             Instantiate(plant, objectSpawner.position, Quaternion.identity);
             Destroy(gameObject);
