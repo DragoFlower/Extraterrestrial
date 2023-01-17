@@ -80,6 +80,24 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""02d39531-a390-41e2-8d27-3a4210f5f439"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LookDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""20b9fc3f-bfa8-49f2-bfb8-26db0ec88716"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -278,6 +296,94 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fbccbf01-6230-4488-92bb-d7d3c32b382d"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""LookUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7725e4db-51a6-457e-81e5-08de7121831a"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""LookUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d219125f-190d-41af-ba95-8d730f61fc25"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LookUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""efe4d188-0137-4214-a6b8-94492434d570"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LookUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""88fdfd4e-5a4e-46f7-8303-46113c5c67ba"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""LookDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33090c0b-d541-43e5-a804-632b87354d16"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""LookDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0babdb6c-a545-4640-afeb-87be47fd56ae"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LookDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8f68f2c3-f1b5-4512-8f31-1d993a7eb4a8"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""LookDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -584,6 +690,8 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         m_Player_Laser = m_Player.FindAction("Laser", throwIfNotFound: true);
         m_Player_Pet = m_Player.FindAction("Pet", throwIfNotFound: true);
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_LookUp = m_Player.FindAction("LookUp", throwIfNotFound: true);
+        m_Player_LookDown = m_Player.FindAction("LookDown", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -656,6 +764,8 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Laser;
     private readonly InputAction m_Player_Pet;
     private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_LookUp;
+    private readonly InputAction m_Player_LookDown;
     public struct PlayerActions
     {
         private @ScriptInput m_Wrapper;
@@ -666,6 +776,8 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         public InputAction @Laser => m_Wrapper.m_Player_Laser;
         public InputAction @Pet => m_Wrapper.m_Player_Pet;
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @LookUp => m_Wrapper.m_Player_LookUp;
+        public InputAction @LookDown => m_Wrapper.m_Player_LookDown;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -693,6 +805,12 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @Pause.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPause;
+                @LookUp.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookUp;
+                @LookUp.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookUp;
+                @LookUp.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookUp;
+                @LookDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
+                @LookDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
+                @LookDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -715,6 +833,12 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @LookUp.started += instance.OnLookUp;
+                @LookUp.performed += instance.OnLookUp;
+                @LookUp.canceled += instance.OnLookUp;
+                @LookDown.started += instance.OnLookDown;
+                @LookDown.performed += instance.OnLookDown;
+                @LookDown.canceled += instance.OnLookDown;
             }
         }
     }
@@ -810,6 +934,8 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         void OnLaser(InputAction.CallbackContext context);
         void OnPet(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnLookUp(InputAction.CallbackContext context);
+        void OnLookDown(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
