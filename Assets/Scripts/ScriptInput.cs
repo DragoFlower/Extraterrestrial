@@ -98,6 +98,15 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""f14eaff2-10b5-412f-8531-952331c5693d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -214,7 +223,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d8558d99-7d09-4938-840e-4c64b322d2e7"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -236,7 +245,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""bdbfe994-35e1-4867-978c-f7e0d9cfef18"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -384,6 +393,28 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""LookDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""de379e7b-115a-427e-88d7-ec3d00d31d75"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8099e69-0f86-4697-bd3e-8321527a253f"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -692,6 +723,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_LookUp = m_Player.FindAction("LookUp", throwIfNotFound: true);
         m_Player_LookDown = m_Player.FindAction("LookDown", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -766,6 +798,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_LookUp;
     private readonly InputAction m_Player_LookDown;
+    private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @ScriptInput m_Wrapper;
@@ -778,6 +811,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @LookUp => m_Wrapper.m_Player_LookUp;
         public InputAction @LookDown => m_Wrapper.m_Player_LookDown;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -811,6 +845,9 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @LookDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
                 @LookDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
                 @LookDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -839,6 +876,9 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @LookDown.started += instance.OnLookDown;
                 @LookDown.performed += instance.OnLookDown;
                 @LookDown.canceled += instance.OnLookDown;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -936,6 +976,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnLookUp(InputAction.CallbackContext context);
         void OnLookDown(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
