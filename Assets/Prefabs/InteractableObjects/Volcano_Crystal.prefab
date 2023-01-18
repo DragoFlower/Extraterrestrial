@@ -204,6 +204,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8442980347358074407}
     m_Modifications:
+    - target: {fileID: 2995156267523191320, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
+      propertyPath: m_Color.b
+      value: 0.504717
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995156267523191320, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
+      propertyPath: m_Color.g
+      value: 0.504717
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995156267523191320, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4741494563730901354, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
       propertyPath: m_Name
       value: Light 2D
