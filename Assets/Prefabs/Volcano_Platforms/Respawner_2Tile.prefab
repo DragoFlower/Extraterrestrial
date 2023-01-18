@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4691752981517250033}
   - component: {fileID: 4691752981517249998}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: Respawner_2Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ PrefabInstance:
       objectReference: {fileID: -1500384186, guid: fea2c4a8d6f6f224e913cebdce47ec98, type: 3}
     - target: {fileID: 1109732776126747203, guid: 4677104569b22c24d96ccbe7d90e0f55, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1109732776714353234, guid: 4677104569b22c24d96ccbe7d90e0f55, type: 3}
       propertyPath: m_Sprite
@@ -68,7 +68,7 @@ PrefabInstance:
       objectReference: {fileID: -1498144754, guid: fea2c4a8d6f6f224e913cebdce47ec98, type: 3}
     - target: {fileID: 1109732776714353244, guid: 4677104569b22c24d96ccbe7d90e0f55, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2726652864557039997, guid: 4677104569b22c24d96ccbe7d90e0f55, type: 3}
       propertyPath: m_SurfaceArc
@@ -124,7 +124,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8800766584627345672, guid: 4677104569b22c24d96ccbe7d90e0f55, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4677104569b22c24d96ccbe7d90e0f55, type: 3}

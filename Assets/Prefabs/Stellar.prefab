@@ -307,6 +307,9 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
+  BreakLayer:
+    serializedVersion: 2
+    m_Bits: 512
   GameController: {fileID: 0}
   speed: 4
   jumpStrenght: 12

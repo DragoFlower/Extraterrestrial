@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5634077055396526229}
   - component: {fileID: 268077335643296257}
   - component: {fileID: 1231836811894997225}
-  m_Layer: 3
+  m_Layer: 9
   m_Name: Spaceship_Platform_1Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

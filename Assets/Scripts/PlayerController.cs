@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float jumpBufferCounter;
 
     public LayerMask GroundLayer;
+    public LayerMask BreakLayer;
     public GameObject GameController;
     public float speed = 3.0f;
     public float jumpStrenght = 5.0f;
@@ -101,7 +102,12 @@ public class PlayerController : MonoBehaviour
     }
     public bool IsGrounded()
     {
-        return Physics2D.Raycast(GroundChecker.position, Vector2.down, 0.1f, GroundLayer);
+        return Physics2D.Raycast(GroundChecker.position, Vector2.down, 0.1f, GroundLayer) | Physics2D.Raycast(GroundChecker.position, Vector2.down, 0.1f, BreakLayer);
+    }
+
+    public bool OnBreakingPlatform()
+    {
+        return Physics2D.Raycast(GroundChecker.position, Vector2.down, 0.1f, BreakLayer) & IsGrounded();
     }
         void Jump()
     {

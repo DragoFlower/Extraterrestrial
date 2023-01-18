@@ -16,7 +16,7 @@ public class PlatformBreak : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (scriptPlayer.IsGrounded())
+        if (scriptPlayer.OnBreakingPlatform())
         {
             hit = true;
         }

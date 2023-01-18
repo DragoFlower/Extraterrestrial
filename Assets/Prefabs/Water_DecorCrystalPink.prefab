@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3861341219199404091}
   - component: {fileID: 6929988601714116789}
   m_Layer: 0
-  m_Name: Water_DecorCrystal
+  m_Name: Water_DecorCrystalPink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dd80f998b4281db498f7740532d2386a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3cb4a0664b368424cb61f506ad5c4a74, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,19 +95,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2995156267523191320, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.39072323
       objectReference: {fileID: 0}
     - target: {fileID: 2995156267523191320, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
       propertyPath: m_Color.g
-      value: 0.9003706
+      value: 0.1745283
       objectReference: {fileID: 0}
     - target: {fileID: 2995156267523191320, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2995156267523191320, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
       propertyPath: m_Intensity
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2995156267523191320, guid: 45f8d049fb47ffc4880c8141bfbd0585, type: 3}
       propertyPath: m_Vertices.Array.size
