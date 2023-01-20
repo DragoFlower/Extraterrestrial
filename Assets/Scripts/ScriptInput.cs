@@ -98,6 +98,15 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rescue"",
+                    ""type"": ""Button"",
+                    ""id"": ""3dd0d281-0e0c-45d1-bb80-6e6ad9541739"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -384,6 +393,28 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""LookDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""60c9a248-2cac-4970-b37b-201ad65bc7c2"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Rescue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67adfa33-2a41-447c-80ec-051a6a672c07"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Rescue"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -692,6 +723,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
         m_Player_LookUp = m_Player.FindAction("LookUp", throwIfNotFound: true);
         m_Player_LookDown = m_Player.FindAction("LookDown", throwIfNotFound: true);
+        m_Player_Rescue = m_Player.FindAction("Rescue", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Point = m_UI.FindAction("Point", throwIfNotFound: true);
@@ -766,6 +798,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Pause;
     private readonly InputAction m_Player_LookUp;
     private readonly InputAction m_Player_LookDown;
+    private readonly InputAction m_Player_Rescue;
     public struct PlayerActions
     {
         private @ScriptInput m_Wrapper;
@@ -778,6 +811,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Player_Pause;
         public InputAction @LookUp => m_Wrapper.m_Player_LookUp;
         public InputAction @LookDown => m_Wrapper.m_Player_LookDown;
+        public InputAction @Rescue => m_Wrapper.m_Player_Rescue;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -811,6 +845,9 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @LookDown.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
                 @LookDown.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
                 @LookDown.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnLookDown;
+                @Rescue.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescue;
+                @Rescue.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescue;
+                @Rescue.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnRescue;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -839,6 +876,9 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
                 @LookDown.started += instance.OnLookDown;
                 @LookDown.performed += instance.OnLookDown;
                 @LookDown.canceled += instance.OnLookDown;
+                @Rescue.started += instance.OnRescue;
+                @Rescue.performed += instance.OnRescue;
+                @Rescue.canceled += instance.OnRescue;
             }
         }
     }
@@ -936,6 +976,7 @@ public partial class @ScriptInput : IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnLookUp(InputAction.CallbackContext context);
         void OnLookDown(InputAction.CallbackContext context);
+        void OnRescue(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
