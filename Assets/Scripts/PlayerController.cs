@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Scripting.APIUpdating;
@@ -74,7 +75,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Jump();
+        //Jump();
     }
     
     private void Flip()
@@ -92,6 +93,7 @@ public class PlayerController : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
     private void Move()
     {
         if (canMove)
@@ -102,12 +104,12 @@ public class PlayerController : MonoBehaviour
     }
     public bool IsGrounded()
     {
-        return Physics2D.Raycast(GroundChecker.position, Vector2.down, 0.1f, GroundLayer) | Physics2D.Raycast(GroundChecker.position, Vector2.down, 0.1f, BreakLayer);
+        return Physics2D.OverlapBox(GroundChecker.position, new Vector2(0.2f, 0.2f), 0f, GroundLayer) | Physics2D.OverlapBox(GroundChecker.position, new Vector2(0.2f, 0.2f), 0f, BreakLayer);
     }
 
     public bool OnBreakingPlatform()
     {
-        return Physics2D.Raycast(GroundChecker.position, Vector2.down, 0.1f, BreakLayer) & IsGrounded();
+        return Physics2D.OverlapBox(GroundChecker.position, new Vector2(0.2f, 0.2f), 0f, BreakLayer) & IsGrounded();
     }
         void Jump()
     {
