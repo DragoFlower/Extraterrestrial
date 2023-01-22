@@ -18,12 +18,9 @@ public class SinkingPlatform : MonoBehaviour
     {
         Sink();
 
-        if (scriptPlayer == null || player == null)
+        if (scriptPlayer == null || player == null || scriptPlayer.isDead)
         {
-            if (player != null)
-            {
                 FindPlayer();
-            }
         }
     }
 

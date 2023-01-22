@@ -14,25 +14,13 @@ public class PlatformBreak : MonoBehaviour
     }
     void Update()
     {
+        Break();
+
         if (scriptPlayer == null || player == null)
         {
-            if (player != null)
-            {
                 FindPlayer();
-            }
-        }
-
-        Break();
+        }  
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (scriptPlayer.OnBreakingPlatform())
-        {
-            hit = true;
-        }
-    }
-
     void FindPlayer()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -41,6 +29,15 @@ public class PlatformBreak : MonoBehaviour
             scriptPlayer = player.GetComponent<PlayerController>();
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (scriptPlayer.OnBreakingPlatform())
+        {
+            hit = true;
+        }
+    }
+
+    
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (hit)
