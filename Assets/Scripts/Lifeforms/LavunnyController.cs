@@ -40,10 +40,7 @@ public class LavunnyController : MonoBehaviour
     {
         if (player == null || scriptPlayer == null || Stellar == null || StellarCollider == null)
         {
-            if (player != null)
-            {
-                FindPlayer(); 
-            }
+                FindPlayer();
         }
 
         RaycastHit2D GroundDetection = Physics2D.Raycast(detector.position, Vector2.down, 0.5f, GroundLayer);

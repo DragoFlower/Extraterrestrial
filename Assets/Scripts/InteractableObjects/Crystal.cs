@@ -23,10 +23,7 @@ public class Crystal : MonoBehaviour
     {
         if (player == null || scriptPlayer == null || Stellar == null)
         {
-            if (player != null)
-            {
                 FindPlayer();
-            }
         }
 
         Drop();
