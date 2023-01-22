@@ -13,6 +13,7 @@ public class LavunnyController : MonoBehaviour
     public GameObject GameController;
     public GameObject player;
     public string PetAnim;
+    public float distance;
 
     private Collider2D StellarCollider;
     private Transform objectSpawner;
@@ -117,7 +118,7 @@ public class LavunnyController : MonoBehaviour
 
     public void Pet()
     {
-        if (scriptPlayer != null && Stellar != null && scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= 1.0f)
+        if (scriptPlayer != null && Stellar != null && scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= distance)
         {
             scriptPlayer.Pet();
             animator.Play(PetAnim);

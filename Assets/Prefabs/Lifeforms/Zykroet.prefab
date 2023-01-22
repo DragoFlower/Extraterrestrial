@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1043650489536458944}
   - component: {fileID: 1043650489536458973}
   - component: {fileID: 1043650489536458972}
-  - component: {fileID: 1043650489536458945}
+  - component: {fileID: 3982181626652206902}
   m_Layer: 0
   m_Name: Zykroet
   m_TagString: Zykroet
@@ -188,7 +188,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1043650489536458945
+--- !u!114 &3982181626652206902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1043650489536458946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc739fd17e7d328478151a2c2d4aa03a, type: 3}
+  m_Script: {fileID: 11500000, guid: 50153b6095de76448ad7e19511a7e860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPlayer: {fileID: 0}
@@ -207,6 +207,10 @@ MonoBehaviour:
   egg: {fileID: 4966960674775492039, guid: e0b4e9535d3b7c14eacb45c191f9e5a9, type: 3}
   Stellar: {fileID: 0}
   stop: 0
+  GameController: {fileID: 0}
+  player: {fileID: 0}
+  PetAnim: Anim_ZykroetPet
+  distance: 2
 --- !u!1 &1043650489551076217
 GameObject:
   m_ObjectHideFlags: 0

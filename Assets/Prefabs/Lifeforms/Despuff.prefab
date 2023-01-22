@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2488561573909298907}
   - component: {fileID: 2488561573909298904}
   - component: {fileID: 2488561573909298905}
-  - component: {fileID: 2488561573909298902}
+  - component: {fileID: -7737109785516961717}
   m_Layer: 0
   m_Name: Despuff
   m_TagString: Despuff
@@ -157,7 +157,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2488561573909298902
+--- !u!114 &-7737109785516961717
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2488561573909298903}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab9a4392ade8e1e4da589905bb340156, type: 3}
+  m_Script: {fileID: 11500000, guid: 50153b6095de76448ad7e19511a7e860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPlayer: {fileID: 0}
@@ -176,6 +176,10 @@ MonoBehaviour:
   egg: {fileID: 4966960674775492039, guid: 9e1d8e6ed0998684e92b7751b6ef5ff3, type: 3}
   Stellar: {fileID: 0}
   stop: 0
+  GameController: {fileID: 0}
+  player: {fileID: 0}
+  PetAnim: Anim_DespuffPet
+  distance: 1.5
 --- !u!1 &2488561574608474835
 GameObject:
   m_ObjectHideFlags: 0

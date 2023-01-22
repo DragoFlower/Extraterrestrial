@@ -8,23 +8,33 @@ public class SinkingPlatform : MonoBehaviour
     private float speed = 0.1f;
     public PlayerController scriptPlayer;
     public Transform origin;
+    public GameObject player;
 
     private void Start()
     {
-        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); ;
+        FindPlayer();
     }
     void Update()
     {
         Sink();
-        if (scriptPlayer == null)
+
+        if (scriptPlayer == null || player == null)
         {
-            if (GameObject.FindGameObjectWithTag("Player") != null)
+            if (player != null)
             {
-                scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); ;
+                FindPlayer();
             }
         }
     }
 
+    void FindPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            scriptPlayer = player.GetComponent<PlayerController>();
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (scriptPlayer.IsGrounded())

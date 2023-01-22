@@ -179,6 +179,7 @@ MonoBehaviour:
   GameController: {fileID: 0}
   player: {fileID: 0}
   PetAnim: Anim_RovunnyPet
+  distance: 1
 --- !u!1 &452990604793917038
 GameObject:
   m_ObjectHideFlags: 0

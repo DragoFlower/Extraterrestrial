@@ -7,19 +7,21 @@ public class PlatformBreak : MonoBehaviour
     private float breakTime = 1f;
     private bool hit;
     public PlayerController scriptPlayer;
+    public GameObject player;
     private void Start()
     {
-        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        FindPlayer();
     }
     void Update()
     {
-        if (scriptPlayer == null)
+        if (scriptPlayer == null || player == null)
         {
-            if (GameObject.FindGameObjectWithTag("Player") != null)
+            if (player != null)
             {
-                scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); ;
+                FindPlayer();
             }
         }
+
         Break();
     }
 
@@ -31,6 +33,14 @@ public class PlatformBreak : MonoBehaviour
         }
     }
 
+    void FindPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            scriptPlayer = player.GetComponent<PlayerController>();
+        }
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (hit)
