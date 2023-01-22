@@ -12,13 +12,21 @@ public class Bush : MonoBehaviour
     private void Start()
     {
         objectSpawner = transform.GetChild(0).GetComponent<Transform>();
+        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        Stellar = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void Update()
     {
-        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        Stellar = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        Drop();
+        if (scriptPlayer == null || Stellar == null)
+        {
+            if (GameObject.FindGameObjectWithTag("Player") != null)
+            {
+                scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+                Stellar = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+                Drop();
+            }
+        }
     }
 
     void Drop()

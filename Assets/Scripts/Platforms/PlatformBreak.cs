@@ -7,10 +7,19 @@ public class PlatformBreak : MonoBehaviour
     private float breakTime = 1f;
     private bool hit;
     public PlayerController scriptPlayer;
-
-    void Update()
+    private void Start()
     {
         scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
+    void Update()
+    {
+        if (scriptPlayer == null)
+        {
+            if (GameObject.FindGameObjectWithTag("Player") != null)
+            {
+                scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); ;
+            }
+        }
         Break();
     }
 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class LavunnyController : MonoBehaviour
@@ -9,6 +10,9 @@ public class LavunnyController : MonoBehaviour
     public GameObject egg;
     public Transform Stellar;
     public bool stop;
+    public GameObject GameController;
+    public GameObject player;
+    public string PetAnim;
 
     private Collider2D StellarCollider;
     private Transform objectSpawner;
@@ -27,15 +31,19 @@ public class LavunnyController : MonoBehaviour
         animator = GetComponent<Animator>();
         isListeningTimer = float.MinValue;
         stop = false;
+
+        FindPlayer(); 
     }
 
     void Update()
     {
-        StellarCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>();
-        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
-        Stellar = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
-        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), StellarCollider);
+        if (player == null || scriptPlayer == null || Stellar == null || StellarCollider == null)
+        {
+            if (player != null)
+            {
+                FindPlayer(); 
+            }
+        }
 
         RaycastHit2D GroundDetection = Physics2D.Raycast(detector.position, Vector2.down, 0.5f, GroundLayer);
 
@@ -61,6 +69,19 @@ public class LavunnyController : MonoBehaviour
 
         UpdateAnimator();
     }
+
+    void FindPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            StellarCollider = player.GetComponent<BoxCollider2D>();
+            scriptPlayer = player.GetComponent<PlayerController>();
+            Stellar = player.GetComponent<Transform>();
+            if (StellarCollider != null)    
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), StellarCollider);
+        }
+    }
     void Flip()
     {
         Vector3 localScale = transform.localScale;
@@ -74,7 +95,7 @@ public class LavunnyController : MonoBehaviour
 
     private void Stop()
     {
-        if (Vector3.Distance(transform.position, Stellar.position) <= 3.0f && scriptPlayer.playsMelody)
+        if (Stellar != null && scriptPlayer != null && Vector3.Distance(transform.position, Stellar.position) <= 3.0f && scriptPlayer.playsMelody)
         {
             stop = true;
             isListeningTimer = 5f;
@@ -96,10 +117,10 @@ public class LavunnyController : MonoBehaviour
 
     public void Pet()
     {
-        if (scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= 1.0f)
+        if (scriptPlayer != null && Stellar != null && scriptPlayer.DoesPet() && BothFacing() && stop && Vector3.Distance(transform.position, Stellar.position) <= 1.0f)
         {
             scriptPlayer.Pet();
-            animator.Play("Anim_LavunnyPet");
+            animator.Play(PetAnim);
 
             if (isListeningTimer <= 1f)
                 isListeningTimer += 1f;

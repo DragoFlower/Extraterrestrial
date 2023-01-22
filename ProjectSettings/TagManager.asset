@@ -12,6 +12,14 @@ TagManager:
   - SoundController
   - LavaDeath
   - Interactable
+  - Bush
+  - Crystal
+  - BreakingPlatform
+  - SinkingPlatform
+  - Despuff
+  - Lavunny
+  - Zykroet
+  - Rovunny
   layers:
   - Default
   - TransparentFX

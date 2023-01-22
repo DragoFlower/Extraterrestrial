@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 452990604767115808}
   - component: {fileID: 452990604767115815}
   - component: {fileID: 452990604767115814}
-  - component: {fileID: 9005284662668572930}
+  - component: {fileID: -8545333576030392900}
   m_Layer: 0
   m_Name: Rovunny
-  m_TagString: Lifeform
+  m_TagString: Rovunny
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,7 +157,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9005284662668572930
+--- !u!114 &-8545333576030392900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 452990604560265611}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03b9cfd3b8ced2446bf92e9d1dd19b21, type: 3}
+  m_Script: {fileID: 11500000, guid: 50153b6095de76448ad7e19511a7e860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scriptPlayer: {fileID: 0}
@@ -176,6 +176,9 @@ MonoBehaviour:
   egg: {fileID: 4966960674775492039, guid: f2b4a95e54b0ca6489ec5090ac310358, type: 3}
   Stellar: {fileID: 0}
   stop: 0
+  GameController: {fileID: 0}
+  player: {fileID: 0}
+  PetAnim: Anim_RovunnyPet
 --- !u!1 &452990604793917038
 GameObject:
   m_ObjectHideFlags: 0

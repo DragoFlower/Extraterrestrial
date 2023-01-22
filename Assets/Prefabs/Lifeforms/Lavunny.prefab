@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8754298989880886200}
   m_Layer: 0
   m_Name: Lavunny
-  m_TagString: Lifeform
+  m_TagString: Lavunny
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,9 @@ MonoBehaviour:
   egg: {fileID: 4966960674775492039, guid: 711df61f70073734688b976a831f9155, type: 3}
   Stellar: {fileID: 0}
   stop: 0
+  GameController: {fileID: 0}
+  player: {fileID: 0}
+  PetAnim: Anim_LavunnyPet
 --- !u!1 &452990604793917038
 GameObject:
   m_ObjectHideFlags: 0

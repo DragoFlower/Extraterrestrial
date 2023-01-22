@@ -9,10 +9,20 @@ public class SinkingPlatform : MonoBehaviour
     public PlayerController scriptPlayer;
     public Transform origin;
 
+    private void Start()
+    {
+        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); ;
+    }
     void Update()
     {
-        scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Sink();
+        if (scriptPlayer == null)
+        {
+            if (GameObject.FindGameObjectWithTag("Player") != null)
+            {
+                scriptPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>(); ;
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 1043650489536458945}
   m_Layer: 0
   m_Name: Zykroet
-  m_TagString: Lifeform
+  m_TagString: Zykroet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

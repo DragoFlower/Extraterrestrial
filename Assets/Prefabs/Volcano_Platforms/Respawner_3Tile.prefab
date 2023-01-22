@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 418014138069594423}
   m_Layer: 9
   m_Name: Respawner_3Tile
-  m_TagString: Untagged
+  m_TagString: BreakingPlatform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

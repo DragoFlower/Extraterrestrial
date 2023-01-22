@@ -41,10 +41,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8442980347358074407}
   - component: {fileID: 2060228506259629256}
-  - component: {fileID: -6299159926880894242}
+  - component: {fileID: -431912851101864049}
   m_Layer: 0
   m_Name: Volcano_Bush
-  m_TagString: Untagged
+  m_TagString: Bush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,7 +119,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-6299159926880894242
+--- !u!114 &-431912851101864049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,13 +128,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 4536733789405885789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96e286b29a77504d8781958d01db8f5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5972310359796ae409346ab9aba8b5b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plant: {fileID: 4966960674775492039, guid: 5a5ca8e7be732d640b10c302dc8188f3, type: 3}
+  drop: {fileID: 4966960674775492039, guid: 5a5ca8e7be732d640b10c302dc8188f3, type: 3}
   objectSpawner: {fileID: 0}
   Stellar: {fileID: 0}
   scriptPlayer: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &6103015470129020248
 GameObject:
   m_ObjectHideFlags: 0

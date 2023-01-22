@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.InputSystem;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.Processors;
 using UnityEngine.Scripting.APIUpdating;
 
 public class PlayerController : MonoBehaviour
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public bool canMove;
     public bool playsMelody;
     public bool shootsLaser;
+    public bool isDead;
 
 
     private void Awake()
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
     {
         GameController = GameObject.FindGameObjectWithTag("GameController");
         canMove = true;
+        isDead = false;
     }
     void Update()
     {
@@ -169,11 +172,13 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag.Equals("DeathZone"))
         {
             CustomEvent.Trigger(GameController, "ToDeath");
+            isDead = true;
             Destroy(gameObject);
         }
         if (collision.gameObject.tag.Equals("LavaDeath"))
         {
             StellarAnimator.Play("Anim_StellarLavaDeath");
+            isDead = true;
         }
     }
 }

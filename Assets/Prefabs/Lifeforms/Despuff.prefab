@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2488561573909298902}
   m_Layer: 0
   m_Name: Despuff
-  m_TagString: Untagged
+  m_TagString: Despuff
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
